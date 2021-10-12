@@ -2,18 +2,47 @@ body, html {
     height: 100%;
 }
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pixabay.com/get/g5a6bf6ea02a59c67428cbf6e840f73402432faf69ef934589bfa68d5c379706610573b3e7e8ba21272345e55a23c4ce9f3b1df8513cbc18c93515b534f157b3299b9ada2aab58f3f03973a05e65f340c_1920.jpg");
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pixabay.com/get/g5a6bf6ea02a59c67428cbf6e840f73402432faf69ef934589bfa68d5c379706610573b3e7e8ba21272345e55a23c4ce9f3b1df8513cbc18c93515b534f157b3299b9ada2aab58f3f03973a05e65f340c_1920.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 .hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.button {
+    width: 200px;
+}
+
+.button-group {
+    margin: 1px;
+}
+
+.results-container {
+    background-color: black;
+    padding-top: 15px;
+}
+
+.movie-container {
+    background-color: grey;
+    padding: 15px;
+    text-align: center;
+}
+
+.food-container {
+    background-color: rgb(241, 241, 95);
+    padding: 15px;
+    text-align: center;
+}
+
+a {
+    color: black;
 }
