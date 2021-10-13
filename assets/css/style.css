@@ -17,7 +17,7 @@ body, html {
     background-color: var(--golden);
 }
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pixabay.com/get/g5a6bf6ea02a59c67428cbf6e840f73402432faf69ef934589bfa68d5c379706610573b3e7e8ba21272345e55a23c4ce9f3b1df8513cbc18c93515b534f157b3299b9ada2aab58f3f03973a05e65f340c_1920.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://thenewgastronome.com/wp-content/uploads/2019/09/hayao_header.jpg");
     height: 40%;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,10 +47,7 @@ h2 {
 }
 
 
-.button-group {
-    margin: 1px;
-    background-color: var(--aqua);
-}
+
 
 
 .btn-styling {
@@ -86,6 +83,10 @@ h2 {
     background-color: var(--peachy);
     padding: 15px;
     text-align: center;
+}
+
+.buttongroup-spacing{
+    padding-top:20px;
 }
 
 a {
