@@ -1,14 +1,40 @@
+/*
+font-family: 'Poppins', sans-serif;
+font-family: 'Righteous', cursive;
+*/
+
+
+:root {
+    --golden: #ffc125;
+    --peachy: #ff8247;   
+    --salmon: #ff6347;
+    --aqua: #40e0d0;
+    --lime: #9acd32;
+}
+
 body, html {
     height: 100%;
+    background-color: var(--golden);
 }
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pixabay.com/get/g5a6bf6ea02a59c67428cbf6e840f73402432faf69ef934589bfa68d5c379706610573b3e7e8ba21272345e55a23c4ce9f3b1df8513cbc18c93515b534f157b3299b9ada2aab58f3f03973a05e65f340c_1920.jpg");
-    height: 50%;
+    height: 40%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 3em;
+}
+
+h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 2em;
+}
+
 .hero-text {
     text-align: center;
     position: absolute;
@@ -16,33 +42,57 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
 }
 
-.button {
-    width: 200px;
-}
 
 .button-group {
     margin: 1px;
+    background-color: var(--aqua);
+}
+
+
+.btn-styling {
+    border-radius:40%;
+    background-image: url(https://pixabay.com/get/g9cde3db69f790cadb65c19145d8f180b66e5b169f127e872b48ba74ee854e03e8933e111ab9e593e45ebd16183cfb66e3dfcbb488206ace1aa3fab1c1920eb5156adb2083d21f4efcc234cd6f8e79a09_1920.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 200px;
+    border: 1px solid black;
+    font-family: 'Righteous', cursive;
+}
+
+.btn-styling:hover {
+    border: 2px dashed black;
 }
 
 .results-container {
-    background-color: black;
+    background-color: var(--golden);
     padding-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 .movie-container {
-    background-color: grey;
+    background-color: var(--lime);
     padding: 15px;
     text-align: center;
 }
 
 .food-container {
-    background-color: rgb(241, 241, 95);
+    background-color: var(--peachy);
     padding: 15px;
     text-align: center;
 }
 
 a {
     color: black;
+}
+
+img {
+    height: 100px;
+    width: auto;
 }
