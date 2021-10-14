@@ -40,6 +40,10 @@ function recipeApi(region) {
             foodUrl.setAttribute("href", resultF.recipe.foodUrl);
             foodUrl.setAttribute("target", "_blank");
             foodUrl.textContent="Click here to view the recipe";
+            let recipeAction = document.querySelector("#recipe-action");
+            recipeAction.setAttribute("class","hide");
+            let recipeSuggestion = document.querySelector("#recipe-suggestion");
+            recipeSuggestion.removeAttribute("class");
         });
 };
 
@@ -54,6 +58,10 @@ function movieApi(region) {
             movieTitle.textContent = "Title: " + resultsM.title;
             let movieImg = document.querySelector("#movie-img");
             movieImg.setAttribute("src", resultsM.image);
+            let movieAction = document.querySelector("#movie-action");
+            movieAction.setAttribute("class","hide");
+            let titleSuggestion = document.querySelector("#movie-suggestion");
+            titleSuggestion.removeAttribute("class");
         })
     };
 
