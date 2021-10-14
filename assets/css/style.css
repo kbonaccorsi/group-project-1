@@ -17,7 +17,7 @@ body, html {
     background-color: var(--golden);
 }
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://pixabay.com/get/g5a6bf6ea02a59c67428cbf6e840f73402432faf69ef934589bfa68d5c379706610573b3e7e8ba21272345e55a23c4ce9f3b1df8513cbc18c93515b534f157b3299b9ada2aab58f3f03973a05e65f340c_1920.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/foodheader.jpg");
     height: 40%;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,44 +48,44 @@ h2 {
 
 
 .button-group {
-    margin: 1px;
-    background-color: var(--aqua);
+    padding: 30px;
 }
 
 
 .btn-styling {
-    border-radius:40%;
-    background-image: url(https://pixabay.com/get/g9cde3db69f790cadb65c19145d8f180b66e5b169f127e872b48ba74ee854e03e8933e111ab9e593e45ebd16183cfb66e3dfcbb488206ace1aa3fab1c1920eb5156adb2083d21f4efcc234cd6f8e79a09_1920.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    width: 200px;
-    border: 1px solid black;
-    font-family: 'Righteous', cursive;
+    border: 3px solid white;
+    width: 150px;
+    border-radius:12px;
+    font-size: 33px;
+    background-color: var(--salmon);
 }
 
-.btn-styling:hover {
-    border: 2px dashed black;
-}
+/* .btn-styling:hover {
+    border: 2px dashed white;
+} */
 
 .results-container {
-    background-color: var(--golden);
     padding-top: 15px;
     font-family: 'Poppins', sans-serif;
     
 }
 
 .movie-container {
-    background-color: var(--lime);
+    background-color: var(--salmon);
+    border: 3px solid white;
+    border-radius:12px;
     padding: 15px;
     text-align: center;
+    color: white
 }
 
 .food-container {
-    background-color: var(--peachy);
+    background-color: var(--salmon);
+    border: 3px solid white;
+    border-radius:12px;
     padding: 15px;
     text-align: center;
+    color: white;
 }
 
 a {
@@ -95,4 +95,8 @@ a {
 img {
     height: 100px;
     width: auto;
+}
+
+.hide{
+    display: none;
 }
