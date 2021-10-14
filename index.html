@@ -39,11 +39,30 @@
     </nav>
     <main>
         <div class="results-container grid-x grid-padding-x align-spaced" id="results-container">
+            
             <section class="movie-container grid-x grid-padding-x align-stretch flex-dir-column" id="movie-container">
                 <h2>Movie Results</h2>
+                <div id="movie-result" style="visibility: hidden">
+                    <h3 id="movie-title"></h3>
+                    <img id="movie-img" src="" alt="">
+                </div>
             </section>
+            
             <section class="food-container grid-x grid-padding-x align-stretch flex-dir-column" id="food-container">
                 <h2>Food Results</h2>
+                <div id="food-result" style="visibility: hidden">
+                    <h3 id="food-title"></h3>
+                    <img id="food-img" src="" alt="">
+                    <p id="food-description"></p>
+
+                    <ol id="instructions">
+                    </ol>
+
+                    <ul id="ingredients">
+                    </ul>
+
+                    <a id="recipe-url"></a>
+                </div>
             </section>
         </div>
     </main>
