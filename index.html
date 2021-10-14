@@ -38,33 +38,42 @@
     </nav>
     <main>
         <div class="results-container grid-x grid-padding-x align-spaced" id="results-container">
-            <section class="movie-container grid-x grid-padding-x align-stretch flex-dir-column section" id="movie-container">
-                <h2>Movie Results</h2>
-                <div id="movie-result">
-                    <h3 id="movie-title"></h3>
-                    <img id="movie-img">
-                </div>
-            </section>
-
-            <section class="food-container grid-x grid-padding-x align-stretch flex-dir-column section" id="food-container">
-                <h2>Food Results</h2>
+            <section class="food-container grid-x grid-padding-x align-stretch flex-dir-column section"
+                id="food-container">
+                <h2 id="recipe-suggestion" class="hide">Recipe:</h2>
                 <div id="food-result">
+                    <p id="recipe-action">Feeling adventurous? Click one of the buttons above and I'll suggest a recipe
+                        to try out!</p>
                     <h3 id="food-title"></h3>
                     <img id="food-img">
                     <a id="food-link"></a>
                 </div>
             </section>
-        </div>
-        <div class="footer">
-            footer 
-            <div id="edamam-badge" data-color="white"></div>
-        </div>
-    </main>
 
+            <section class="movie-container grid-x grid-padding-x align-stretch flex-dir-column section"
+                id="movie-container">
+                <h2 id="movie-suggestion" class="hide">Movie Suggestion:</h2>
+                <div id="movie-result">
+                    <p id="movie-action">Know what kind of recipe you'd like to cook? Click one of the buttons above and
+                        I'll suggest a movie!</p>
+                    <h3 id="movie-title"></h3>
+                    <img id="movie-img">
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <div class="column align-middle">
+                <h2>Your Last Pairing</h2>
+                <h3 id="#last-recipe">movie</h3>
+                <h3 id="#last-movie">recipe</h3>
+            </div>
+        </div>
+        <footer>
+            <div class="edamam" id="edamam-badge"></div>
+        </footer>
+    </main>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-
-
     <script src=" ./assets/js/script.js"></script>
 </body>
 
