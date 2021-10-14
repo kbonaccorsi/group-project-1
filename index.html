@@ -39,17 +39,21 @@
     </nav>
     <main>
         <div class="results-container grid-x grid-padding-x align-spaced" id="results-container">
-            
-            <section class="movie-container grid-x grid-padding-x align-stretch flex-dir-column" id="movie-container">
+            <section class="movie-container grid-x grid-padding-x align-stretch flex-dir-column section" id="movie-container">
                 <h2>Movie Results</h2>
-                <div id="movie-result" style="visibility: hidden">
+                <div id="movie-result">
                     <h3 id="movie-title"></h3>
-                    <img id="movie-img" src="" alt="">
+                    <img id="movie-img">
                 </div>
             </section>
-            <!-- //style="visibility: hidden -->
-            <section class="food-container grid-x grid-padding-x align-stretch flex-dir-column" id="food-container">
+
+            <section class="food-container grid-x grid-padding-x align-stretch flex-dir-column section" id="food-container">
                 <h2>Food Results</h2>
+                <div id="food-result">
+                    <h3 id="food-title"></h3>
+                    <img id="food-img">
+                    <a id="food-link"></a>
+                </div>
             </section>
         </div>
     </main>
