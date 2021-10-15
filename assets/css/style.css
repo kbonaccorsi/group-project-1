@@ -8,8 +8,8 @@ font-family: 'Righteous', cursive;
     --golden: #ffc125;
     --peachy: #ff8247;   
     --salmon: #ff6347;
-    --aqua: #40e0d0;
-    --lime: #9acd32;
+    /* --aqua: #40e0d0;
+    --lime: #9acd32; */
 }
 
 body, html {
@@ -69,7 +69,7 @@ h2 {
 } */
 
 .results-container {
-    padding: 0px 0px 100px 0px;
+    padding: 0px 0px 50px 0px;
     font-family: 'Poppins', sans-serif;
     
 }
@@ -95,7 +95,12 @@ h2 {
 }
 
 a {
-    color: black;
+    color: white;
+}
+
+#food-img{
+    height:150px;
+    width: auto;
 }
 
 #movie-img{
@@ -107,6 +112,26 @@ a {
 .hide{
     display: none;
 }
+
+.center-items{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#local-storage{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: var(--salmon);
+    border: 3px solid white;
+    border-radius: 12px;
+    width: 300px;
+    color:white;
+}
+
+
 
 footer {
     background-color: var(--peachy);

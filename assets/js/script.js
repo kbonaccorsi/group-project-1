@@ -2,13 +2,6 @@
 let container = document.querySelector(".nav")
 let results = document.querySelector(".section");
 
-container.addEventListener("click", function (event) {
-    let element = event.target
-    if (element.matches(".button")) {
-        let state = element.getAttribute("id");
-        displayResults(state) //displayResults('american')
-    }
-});
 
 // get data attribute from the buttons. 
 // then do fetch calls 
@@ -27,10 +20,10 @@ function displayResults(region) {
 
 function recipeApi(region) {
     console.log(region) // want to append this region onto the fetch request based on api specs
-
+    
     fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${pickRandom(foodQueries)}&app_id=1802ebf5&app_key=c4815f7f4cc77e6493a25d7413cc910b&cuisineType=${region}`)
-        .then(response => response.json())
-        .then(data => {
+    .then(response => response.json())
+    .then(data => {
             let resultF = pickRandom(data.hits);
             let foodTitle = document.querySelector("#food-title");
             foodTitle.textContent = resultF.recipe.label;
@@ -45,16 +38,17 @@ function recipeApi(region) {
             let recipeSuggestion = document.querySelector("#recipe-suggestion");
             recipeSuggestion.removeAttribute("class");
         });
-};
-
-function movieApi(region) {
-    console.log(region);
-    //append the region string onto the fetch request based on api specs
-    fetch("https://imdb-api.com/en/API/Top250Movies/k_tq6blagh")
+    };
+    let movieTitle = document.querySelector("#movie-title");
+    let btnResult = []; 
+    
+    function movieApi(region) {
+        console.log(region);
+        //append the region string onto the fetch request based on api specs
+        fetch("https://imdb-api.com/en/API/Top250Movies/k_tq6blagh")
         .then(response => response.json())
         .then(response => {
             let resultsM = pickRandom(response.items);
-            let movieTitle = document.querySelector("#movie-title");
             movieTitle.textContent = "Title: " + resultsM.title;
             let movieImg = document.querySelector("#movie-img");
             movieImg.setAttribute("src", resultsM.image);
@@ -64,10 +58,38 @@ function movieApi(region) {
             titleSuggestion.removeAttribute("class");
         })
     };
+    
+    function init(){
+        let storedPastParings = JSON.parse(localStorage.getItem("movie"));
+        if (!storedPastParings === null){
+            btnResult = storedPastParings
+        }
+        movieApi();
+    }
+    
+    function  storePastParings(){
+        localStorage.setItem("movie", JSON.stringify(btnResult));
+        // let pastMovie = (movieTitle.value)
+        // console.log(pastMovie);
+        // let displayPastMovie = document.querySelector("#last-movie")
+        // localStorage.getItem(pastMovie);
+    } ;
 
-// utilitiy if we need it---might not--good for conversions
-// function regionHandlerForMovies(region) {
-//     if (region === 'american') {
-//         return 'US'
-//     }
-// };
+    // utilitiy if we need it---might not--good for conversions
+    // function regionHandlerForMovies(region) {
+        //     if (region === 'american') {
+            //         return 'US'
+            //     }
+            // };
+            container.addEventListener("click", function (event) {
+                let element = event.target
+                if (element.matches(".button")) {
+                    let state = element.getAttribute("id");
+                    displayResults(state) //displayResults('american')
+                }
+                btnResult.push(movieTitle);
+                storePastParings();
+                movieApi();
+            });
+
+        init();
