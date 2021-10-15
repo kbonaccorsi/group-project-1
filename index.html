@@ -40,7 +40,7 @@
         <div class="results-container grid-x grid-padding-x align-spaced" id="results-container">
             <section class="food-container grid-x grid-padding-x align-stretch flex-dir-column cell large-4 small-12 section"
                 id="food-container">
-                <h2 id="recipe-suggestion" class="hide">Recipe:</h2>
+                <h2 id="recipe-suggestion" class="hide">Recipe Suggestion:</h2>
                 <div id="food-result">
                     <p id="recipe-action">Feeling adventurous? Click one of the buttons above and I'll suggest a recipe
                         to try out!</p>
@@ -63,10 +63,12 @@
         </div>
         <div class="center-items">
             <div id="local-storage">
-                <div class=".local-content">
                     <h2>Your Last Pairing</h2>
-                    <h3 id="#last-recipe">recipe</h3>
-                    <h3 id="#last-movie">movie</h3>
+                    <div class="local-content"></div>
+                        <h3 id="#last-recipe">recipe</h3>
+                            <div id=" previous-recipe-result"></div>
+                        <h3 id="#last-movie">movie</h3>
+                            <div id=" previous-movie-result"></div>
                 </div>
             </div>
         </div>
