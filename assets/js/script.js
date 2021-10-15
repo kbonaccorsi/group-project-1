@@ -21,9 +21,11 @@ let movieAction = document.querySelector("#movie-action");
 //movie h2
 let titleSuggestion = document.querySelector("#movie-suggestion");
 
+let movieResult = document.getElementById("movie-result").value;
 
+let movieStorage = document.getElementById("store-last-movie");
 //assigns the API parameter to choose from one of these choices
-const foodQueries = ["beef", "chicken", "fish", "pork", "vegetarian"]
+const foodQueries = ["beef", "chicken", "fish", "pork", "vegetarian"];
 
 // gets a random element from an array and returns it
 function pickRandom(arr) {
@@ -57,7 +59,13 @@ function apis(region) {
                     console.log(resultsM);
                 })
         });
+    storePastSearches()
+    displayPastSearches()
 };
+
+//<div id="store-last-recipe"></div>
+//<div id="store-last-movie"></div>
+
 
 //puts the food and movie suggestions on the webpage
 function displayResults(region) {
@@ -65,12 +73,12 @@ function displayResults(region) {
 };
 
 
-function renderPastSearches() {
-
+function storePastSearches() {
+localStorage.setItem("previousMovie", movieResult);
 };
 
 function displayPastSearches() {
-
+movieStorage.innerHTML = localStorage.getItem("previousMovie");
 };
 
 
