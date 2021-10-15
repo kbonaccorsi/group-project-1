@@ -1,6 +1,16 @@
 // Global Variables 
 let container = document.querySelector(".nav")
 let results = document.querySelector(".section");
+let foodTitle = document.querySelector("#food-title");
+let foodImg = document.querySelector("#food-img");
+let foodUrl = document.querySelector("#food-link");
+let recipeAction = document.querySelector("#recipe-action");
+let recipeSuggestion = document.querySelector("#recipe-suggestion");
+let movieTitle = document.querySelector("#movie-title");
+let btnResult = [];
+let movieImg = document.querySelector("#movie-img");
+let movieAction = document.querySelector("#movie-action");
+let titleSuggestion = document.querySelector("#movie-suggestion");
 
 
 // get data attribute from the buttons. 
@@ -25,22 +35,15 @@ function recipeApi(region) {
         .then(response => response.json())
         .then(data => {
             let resultF = pickRandom(data.hits);
-            let foodTitle = document.querySelector("#food-title");
             foodTitle.textContent = resultF.recipe.label;
-            let foodImg = document.querySelector("#food-img");
             foodImg.setAttribute("src", resultF.recipe.image);
-            let foodUrl = document.querySelector("#food-link");
             foodUrl.setAttribute("href", resultF.recipe.foodUrl);
             foodUrl.setAttribute("target", "_blank");
             foodUrl.textContent = "Click here to view the recipe";
-            let recipeAction = document.querySelector("#recipe-action");
             recipeAction.setAttribute("class", "hide");
-            let recipeSuggestion = document.querySelector("#recipe-suggestion");
             recipeSuggestion.removeAttribute("class");
         });
 };
-let movieTitle = document.querySelector("#movie-title");
-let btnResult = [];
 
 function movieApi(region) {
     console.log(region);
@@ -50,11 +53,8 @@ function movieApi(region) {
         .then(response => {
             let resultsM = pickRandom(response.items);
             movieTitle.textContent = "Title: " + resultsM.title;
-            let movieImg = document.querySelector("#movie-img");
             movieImg.setAttribute("src", resultsM.image);
-            let movieAction = document.querySelector("#movie-action");
             movieAction.setAttribute("class", "hide");
-            let titleSuggestion = document.querySelector("#movie-suggestion");
             titleSuggestion.removeAttribute("class");
         })
 };
@@ -81,6 +81,8 @@ function storePastParings() {
 //         return 'US'
 //     }
 // };
+console.log(movieTitle);
+
 container.addEventListener("click", function (event) {
     let element = event.target
     if (element.matches(".button")) {
