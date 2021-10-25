@@ -12,6 +12,10 @@ let foodUrl = document.querySelector("#food-link");
 let recipeAction = document.querySelector("#recipe-action");
 //recipe h2
 let recipeSuggestion = document.querySelector("#recipe-suggestion");
+
+let foodResult = document.getElementById("food-result").value;
+
+let foodStorage = document.getElementById("store-last-recipe");
 //h3 movie title display
 let movieTitle = document.querySelector("#movie-title");
 //image of movie poster
@@ -47,25 +51,22 @@ function apis(region) {
             foodUrl.textContent = "Click here to view the recipe";
             recipeAction.setAttribute("class", "hide");
             recipeSuggestion.removeAttribute("class");
+            storePastSearches("previousRecipe", resultsF.recipe.label);
             console.log(resultsF);
             fetch("https://imdb-api.com/en/API/Top250Movies/k_tq6blagh")
                 .then(response => response.json())
                 .then(data => {
                     let resultsM = pickRandom(data.items);
-                    movieTitle.textContent = "Title: " + resultsM.title;
+                    movieTitle.textContent = resultsM.title;
                     movieImg.setAttribute("src", resultsM.image);
                     movieAction.setAttribute("class", "hide");
                     titleSuggestion.removeAttribute("class");
+                    storePastSearches("previousMovie", resultsM.title);
                     console.log(resultsM);
                 })
         });
-    storePastSearches()
     displayPastSearches()
 };
-
-//<div id="store-last-recipe"></div>
-//<div id="store-last-movie"></div>
-
 
 //puts the food and movie suggestions on the webpage
 function displayResults(region) {
@@ -73,35 +74,15 @@ function displayResults(region) {
 };
 
 
-function storePastSearches() {
-localStorage.setItem("previousMovie", movieResult);
+function storePastSearches(key, result) {
+    localStorage.setItem(key, result);
 };
 
 function displayPastSearches() {
-movieStorage.innerHTML = localStorage.getItem("previousMovie");
+    foodStorage.innerHTML = localStorage.getItem("previousRecipe");
+    movieStorage.innerHTML = localStorage.getItem("previousMovie");
 };
 
-
-// function init() {
-//     let storedPastParings = JSON.parse(localStorage.getItem("movie"));
-//     if (!storedPastParings === null) {
-//         btnResult = storedPastParings
-//     }
-// }
-
-// function storePastParings() {
-//     localStorage.setItem("movie", JSON.stringify(btnResult));
-//     // let pastMovie = (movieTitle.value)
-//     // let displayPastMovie = document.querySelector("#last-movie")
-//     // localStorage.getItem(pastMovie);
-// };
-
-// utilitiy if we need it---might not--good for conversions
-// function regionHandlerForMovies(region) {
-//     if (region === 'american') {
-//         return 'US'
-//     }
-// };
 
 //adds a click event to the entire navigation bar so any button clicked will have an action
 container.addEventListener("click", function (event) {
