@@ -1,7 +1,7 @@
 # ChopsticksAndChill
   
 ## Description
-Chopsticks and Chill is an application that will allow users to click on a type of food which will tehn produce a recipe suggestion (matching that type of food), and a random movie to watch with the meal.
+Chopsticks and Chill is an application that will allow users to click on a type of food which will then produce a recipe suggestion (matching that type of food), and a random movie to watch with the meal.
   
 ## Installation
 There are no installations required.
